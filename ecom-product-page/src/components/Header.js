@@ -35,6 +35,7 @@ const Header = () => {
         <AiOutlineShoppingCart size={24} className="mx-2" />
         <img
           src={process.env.PUBLIC_URL + "/images/image-avatar.png"}
+          alt="avatar"
           height="36px"
         />
       </div>
