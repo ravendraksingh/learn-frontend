@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Header = () => {
   return (
-    <div role="header" className="d-flex flex-row justify-content-between">
+    <div role="nav" className="d-flex flex-row justify-content-between">
       <div className="d-flex flex-row">
         <Navbar
           bg="white"

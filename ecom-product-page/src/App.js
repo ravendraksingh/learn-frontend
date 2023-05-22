@@ -4,7 +4,7 @@ import ProductHome from "./components/ProductHome";
 
 function App() {
   return (
-    <div role="body" className="container">
+    <div className="container">
       <Header />
       <hr className="d-none d-sm-block" />
       <ProductHome />
