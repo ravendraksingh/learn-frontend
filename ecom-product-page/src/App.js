@@ -1,11 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
 import ProductHome from "./components/ProductHome";
 
 function App() {
   return (
-    <div className="container">
+    <div role="body" className="container">
       <Header />
       <hr className="d-none d-sm-block" />
       <ProductHome />

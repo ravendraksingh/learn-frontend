@@ -47,7 +47,7 @@ const ProductHome = () => {
   }
 
   return (
-    <div className="pdcontainer">
+    <div role="main" className="pdcontainer">
       <div className="left">
         <div
           id="imgCarouselContorl"
