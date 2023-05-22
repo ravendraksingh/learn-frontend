@@ -84,6 +84,7 @@ const ProductHome = () => {
               >
                 <img
                   src={process.env.PUBLIC_URL + "/images/" + image2.tn}
+                  alt={image2.tn}
                   className="d-block mt-5 indi rounded"
                 />
               </button>
