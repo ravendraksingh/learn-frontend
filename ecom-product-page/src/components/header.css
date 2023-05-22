@@ -1,0 +1,13 @@
+.navbar {
+  background-color: white;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.nav__collapsed {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.avatar-box {
+  margin-top: 30px;
+}

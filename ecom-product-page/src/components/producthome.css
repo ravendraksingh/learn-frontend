@@ -1,0 +1,97 @@
+.pdcontainer {
+  display: flex;
+  /* border: 1px solid red; */
+  margin-top: 64px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.orange-text {
+  color: hsl(26, 100%, 55%);
+}
+.grey-text {
+  color: hsl(219, 9%, 45%);
+}
+.left,
+.right,
+.pd-details {
+  display: flex;
+  flex-direction: column;
+}
+.left {
+  flex: 0.4;
+  border-radius: 8px;
+}
+.right {
+  flex: 0.6;
+  padding: 16px;
+  padding-left: 32px;
+}
+.custom-button {
+  padding: 4px 24px;
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  border: 1px solid hsl(26, 100%, 55%);
+}
+.custom-button:hover {
+  background-color: hsl(26, 94%, 35%);
+  color: white;
+  border: 1px solid hsl(26, 94%, 35%);
+}
+.tnimg-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.tnimage {
+  height: 60px;
+  width: 60px;
+}
+.pdcomp {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.pdname {
+  font-size: 28px;
+}
+.discount {
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  background-color: hsl(25, 100%, 94%);
+}
+.mrp {
+  font-size: 0.75rem;
+  text-decoration: line-through;
+}
+.indi-box {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0;
+  justify-content: space-between;
+}
+.indi {
+  width: 60px;
+}
+.carousel-indicators {
+  height: 0px;
+}
+
+@media screen and (max-width: 576px) {
+  .pdcontainer {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .left {
+    margin-bottom: 32px;
+  }
+  .tnimg-container {
+    display: none;
+  }
+  .right {
+    flex: 1;
+    padding: 0;
+  }
+}
