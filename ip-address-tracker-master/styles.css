@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Rubik";
+  font-size: 18px;
+  text-align: center;
+  height: 100vh;
+}
+input {
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 300;
+}
+input[type="search"]::after {
+  content: url("./images/icon-arrow.svg");
+}
+::-webkit-input-placeholder {
+  font-size: small;
+  font-weight: 400;
+}
+.heading {
+  color: hsl(0, 0%, 59%);
+  font-size: small;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.big-text {
+  font-weight: 700;
+}
+.vl {
+  border-left: 2px solid rgb(220, 220, 220);
+  /* border-left: 1px solid gray; */
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  /* margin-right: auto; */
+  /* height: 140px; */
+}
+.search__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 12px;
+}
+.dtls__container {
+  border: 1px solid rgb(220, 220, 220);
+  margin-top: -2em;
+  border-radius: 12px;
+}
