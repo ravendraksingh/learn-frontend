@@ -22,28 +22,36 @@
 
     <title>Frontend Mentor | IP Address Tracker</title>
 
-    <script type="application/javascript">
+    <script>
       function getIP() {
         fetch("https://api.ipify.org/?format=json").then((response) => {
           response.json().then((data) => {
-            //console.log("response", data);
+            console.log("response", data);
             document.getElementById("inputip").value = data.ip;
           });
         });
+
+        if (document.getElementById("inputip") != undefined) {
+          fetchGeoDetailsForIP(document.getElementById("inputip").value);
+        }
       }
-    </script>
 
-    <script type="application/javascript" src="https://api.ipify.org"></script>
-
-    <script>
-      var fetchedData;
       function fetchIp() {
+        var ip =
+          document.getElementById("inputip") != undefined
+            ? document.getElementById("inputip").value
+            : "";
+        if (ip) {
+          fetchGeoDetailsForIP(ip);
+        }
+      }
+
+      function fetchGeoDetailsForIP(ip) {
         console.log("fetchIp called");
-        const inputIP = document.getElementById("inputip").value;
+        // const inputIP = document.getElementById("inputip").value;
         fetch(
-          //   "https://geo.ipify.org/api/v2/country?apiKey=at_myezyTGESVPVoXOxImxcI35pLcA6C&ipAddress=" +
           "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_myezyTGESVPVoXOxImxcI35pLcA6C&ipAddress=" +
-            inputIP
+            ip
         )
           .then((response) => response.json())
           .then((data) => {
@@ -153,10 +161,10 @@
       "
     ></div>
     <script>
-        var map ;
+      var map;
       function createMap(lat, lng) {
         if (map != undefined) {
-            map.remove();
+          map.remove();
         }
         map = L.map("map").setView([lat, lng], 13);
         const tiles = L.tileLayer(
