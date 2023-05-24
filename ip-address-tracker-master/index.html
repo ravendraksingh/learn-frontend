@@ -22,6 +22,19 @@
 
     <title>Frontend Mentor | IP Address Tracker</title>
 
+    <script type="application/javascript">
+      function getIP() {
+        fetch("https://api.ipify.org/?format=json").then((response) => {
+          response.json().then((data) => {
+            //console.log("response", data);
+            document.getElementById("inputip").value = data.ip;
+          });
+        });
+      }
+    </script>
+
+    <script type="application/javascript" src="https://api.ipify.org"></script>
+
     <script>
       var fetchedData;
 
@@ -79,7 +92,7 @@
     ></script>
   </head>
 
-  <body>
+  <body onload="getIP()">
     <div
       style="
         background-image: url(./images/pattern-bg-desktop.png);
