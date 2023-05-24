@@ -37,21 +37,6 @@
 
     <script>
       var fetchedData;
-
-      function createMap(lat, lng) {
-        const map = L.map("map").setView([lat, lng], 13);
-        const tiles = L.tileLayer(
-          "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-          {
-            maxZoom: 19,
-            attribution:
-              '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-          }
-        ).addTo(map);
-
-        var marker = L.marker([lat, lng]).addTo(map);
-      }
-
       function fetchIp() {
         console.log("fetchIp called");
         const inputIP = document.getElementById("inputip").value;
@@ -167,5 +152,24 @@
         z-index: 0;
       "
     ></div>
+    <script>
+        var map ;
+      function createMap(lat, lng) {
+        if (map != undefined) {
+            map.remove();
+        }
+        map = L.map("map").setView([lat, lng], 13);
+        const tiles = L.tileLayer(
+          "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          {
+            maxZoom: 19,
+            attribution:
+              '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          }
+        ).addTo(map);
+
+        var marker = L.marker([lat, lng]).addTo(map);
+      }
+    </script>
   </body>
 </html>
