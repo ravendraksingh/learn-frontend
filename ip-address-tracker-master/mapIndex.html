@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base target="_top" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quick Start - Leaflet</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="docs/images/favicon.ico"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .leaflet-container {
+        height: 400px;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" style="width: 600px; height: 400px"></div>
+    <script>
+      const map = L.map("map").setView([28.56852, 77.3916], 13);
+
+      const tiles = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+          maxZoom: 19,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }
+      ).addTo(map);
+
+      const marker = L.marker([28.5, 77.3916])
+        .addTo(map)
+        .bindPopup("<b>Hello world!</b><br />I am a popup.")
+        .openPopup();
+
+      const circle = L.circle([28.5, -0.11], {
+        color: "red",
+        fillColor: "#f03",
+        fillOpacity: 0.5,
+        radius: 500,
+      })
+        .addTo(map)
+        .bindPopup("I am a circle.");
+
+      const polygon = L.polygon([
+        [28.56, -0.08],
+        [28.569, -0.06],
+        [28.57, -0.047],
+      ])
+        .addTo(map)
+        .bindPopup("I am a polygon.");
+
+      const popup = L.popup()
+        .setLatLng([28.513, 77.3916])
+        .setContent("I am a standalone popup.")
+        .openOn(map);
+
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent(`You clicked the map at ${e.latlng.toString()}`)
+          .openOn(map);
+      }
+
+      map.on("click", onMapClick);
+    </script>
+  </body>
+</html>
