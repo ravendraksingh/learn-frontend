@@ -7,9 +7,15 @@
 body {
   font-family: "Figtree", sans-serif;
   height: 100vh;
+  margin: 0;
 }
-body p { 
-    font-size: 16px;
+body p {
+  font-size: 16px;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .card {
   max-width: 320px;
