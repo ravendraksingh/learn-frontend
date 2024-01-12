@@ -1,0 +1,95 @@
+*::before,
+*,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+:root {
+  --dark-grey-400: hsl(0, 0%, 63%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --dark-grey-600: hsl(0, 0%, 27%);
+}
+body {
+  font-size: 14px;
+  font-family: "League Spartan", sans-serif;
+}
+body p {
+  font-weight: 500;
+  color: var(--dark-grey-400);
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+.upper-box {
+  display: flex;
+  width: 100%;
+}
+.upper-box-left {
+  flex: 0.6;
+  background-image: url("./images/desktop-image-hero-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  transition: background-image 1s ease-in-out;
+  aspect-ratio: 9/5;
+}
+.menu {
+  display: flex;
+  margin-top: 2rem;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+.menu .logo {
+  font-weight: bold;
+}
+.menu li {
+  margin-right: 1em;
+  color: white;
+}
+.upper-box-right {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.upper-box-right-text {
+  padding: 40px;
+}
+.arrow-box {
+  width: fit-content;
+  background-color: black;
+  float: left;
+}
+.arrow-btn {
+  background-color: black;
+  border: 0;
+  padding: 16px 28px;
+  transition: background-color 0.3s linear;
+}
+.arrow-btn:hover {
+  background-color: rgba(220, 220, 220, 0.4);
+}
+.lower-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.lower-box img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 9/5;
+}
+.lower-box-2 {
+  padding: 2rem;
+  padding-top: 3rem;
+}
+.lower-box-2 h3 {
+  text-transform: uppercase;
+}
