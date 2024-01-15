@@ -1,0 +1,18 @@
+.score-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 24px;
+  padding: 8px;
+  margin-right: 12px;
+  color: var(--Dark-blue);
+  font-weight: 700;
+  background-color: hsl(228, 33%, 97%);
+  border-radius: 8px;
+}
+
+.score-btn .img {
+  height: 11px;
+  width: 11px;
+}
