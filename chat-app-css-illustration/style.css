@@ -1,0 +1,205 @@
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  /* (sub-heading at the top of the app UI) */
+  --Pale-Violet: hsl(276, 100%, 81%);
+  --Moderate-Violet: hsl(276, 55%, 52%); /* (chat on the left) */
+  --Desaturated-Dark-Violet: hsl(271, 15%, 43%); /* (chat on the right) */
+  --Grayish-Blue: hsl(206, 6%, 79%); /* (placeholder text) */
+  --main-heading: hsl(271, 36%, 24%); /* (main heading) */
+  --Dark-Grayish-Violet: hsl(270, 7%, 64%); /* (paragraph) */
+  /* Gradient */
+  --Light-Magenta: hsl(293, 100%, 63%);
+  --Light-Violet: hsl(264, 100%, 61%);
+}
+body {
+  padding: 0;
+  background-color: rgba(220, 220, 220, 0.2);
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+.rubik-500 {
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 900px;
+  --bg-img-height: calc(100vh - 120px);
+  --bg-img-radius: 200px;
+  /* border: 1px solid green; */
+  padding: 2em 1em;
+}
+.bg1,
+.bg2 {
+  --bg-img-width: 400px;
+  width: var(--bg-img-width);
+  height: var(--bg-img-height);
+}
+.bg1 {
+  background-image: linear-gradient(
+    to bottom,
+    var(--Light-Magenta),
+    var(--Light-Violet)
+  );
+  border-bottom-left-radius: var(--bg-img-radius);
+  border-bottom-right-radius: var(--bg-img-radius);
+  position: absolute;
+  top: 0;
+  left: calc(var(--bg-img-width) / -2);
+  z-index: -2;
+}
+.bg2 {
+  background: rgba(220, 220, 220, 0.4);
+  border-top-left-radius: var(--bg-img-radius);
+  border-top-right-radius: var(--bg-img-radius);
+  position: absolute;
+  bottom: 0vh;
+  right: calc(var(--bg-img-width) / -2);
+  z-index: -5;
+  /* border: 2px solid magenta; */
+}
+.mobile-snap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 350px;
+  max-width: 350px;
+  max-height: calc(100vh - 2em);
+  margin-top: 2em;
+  margin-bottom: 4em;
+  background-color: rgb(249, 249, 249);
+  border: 12px solid #fff;
+  border-radius: 1em;
+}
+.avatar-img {
+  --avatar-size: 32px;
+  width: var(--avatar-size);
+  border-radius: calc(var(--avatar-size) / 2);
+  margin-right: 1em;
+  margin-left: 1em;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    var(--Light-Violet),
+    var(--Light-Magenta)
+  );
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  color: white;
+  overflow-y: hidden;
+}
+.top span {
+  font-size: smaller;
+}
+.sub-heading {
+  color: var(--Pale-Violet);
+}
+.camera {
+  /* border: 1px solid blue; */
+  inline-size: 30%;
+  height: 32px;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 1em;
+  transform: translateY(-32px);
+}
+.content {
+  text-align: center;
+  max-width: 45ch;
+  min-width: 200px;
+  padding: 0 1em;
+}
+.content > p {
+  color: var(--Dark-Grayish-Violet);
+}
+.avatar-text * {
+  line-height: 1;
+}
+.avatar-text p {
+  font-size: 0.9em;
+}
+.avatar-text span {
+  font-size: 0.8em;
+}
+.bottom {
+  position: relative;
+}
+.input-arrow {
+  inline-size: 32px;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translateY(-50%);
+  /* pointer-events: none; */
+}
+.image {
+  height: 48px;
+  border-radius: 8px;
+}
+.from-text,
+.to-text {
+  font-size: 12px;
+  inline-size: 80%;
+  margin-bottom: 8px;
+  padding: 4px;
+  border-radius: 8px;
+}
+.from-text {
+  background-color: hsla(276, 55%, 52%, 0.1);
+  color: var(--Moderate-Violet);
+}
+.to-text {
+  /* background-color: hsla(271, 15%, 43%, 0.1); */
+  background-color: #fff;
+  /* float: inline-end; */
+  color: hsl(271, 15%, 43%);
+  margin-left: auto;
+  margin-right: 0;
+}
+.price-tag {
+  background-image: linear-gradient(
+    to right,
+    var(--Light-Magenta),
+    var(--Light-Violet)
+  );
+  background-size: contain;
+  border-radius: 16px;
+  inline-size: 60%;
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 8px;
+  color: var(--Moderate-Violet);
+  font-size: 14px;
+}
+.main-heading {
+  color: var(--main-heading);
+}
+
+@media screen and (min-width: 768px) {
+  .main-wrapper {
+    flex-direction: row;
+  }
+}
