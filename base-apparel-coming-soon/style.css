@@ -54,6 +54,7 @@ ul {
   /* background-position: top center;
   background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
   padding: 2em 1em; */
+  padding-bottom: 2em;
 }
 .content-2 {
   text-align: center;
