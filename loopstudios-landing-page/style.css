@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+/* Initial Reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+/* Variables */
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Gray: hsl(0, 0%, 55%);
+  --Dark-Gray: hsl(0, 0%, 41%);
+  --font-family-heading: "Josefin Sans", sans-serif;
+  --font-family-paragraph: "Alata", sans-serif;
+}
+/* Body */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+/* Defaults for images */
+img {
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1em;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+/* Typography */
+p,
+ul,
+li {
+  font-family: var(--font-family-paragraph);
+}
+.bg {
+  width: 100%;
+  height: 100%;
+}
+.bg-white {
+  background-color: var(--White);
+}
+.text-gray {
+  color: var(--Gray);
+}
+.text-dark-gray {
+  color: var(--Dark-Gray);
+}
+.unstyled_list {
+  list-style: none;
+  display: inline-flex;
+  gap: 1em;
+}
+.wrapper {
+  padding-inline: 2em;
+  padding-block: 2em;
+}
+@media screen and (992px < width) {
+  .wrapper {
+    padding-inline: 4em;
+  }
+}
+/* Section */
+section {
+  text-align: center;
+}
+section p {
+  color: var(--Gray);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+.section-heading {
+  color: var(--Dark-Gray);
+  font-size: 2.5em;
+  text-transform: uppercase;
+  /* margin-bottom: 1em; */
+  font-family: var(--font-family-heading);
+  font-weight: 300;
+}
+/* Hero Section */
+.hero-section {
+  height: 90vh;
+  /* min-height: 90vh; */
+  background-image: url("./images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+.hero-img {
+  width: 100%;
+  block-size: auto; /* Adding a block-size value of auto means that the aspect-ratio of the images will remain constant. https://web.dev/learn/design/responsive-images*/
+  /* aspect-ratio: 750 / 1300; */
+}
+.hero-text-box {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.navbar {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+.topnav {
+  display: none;
+}
+.nav-item {
+  color: var(--White);
+}
+.hamburger-icon {
+  display: inline-block;
+  padding: 1em;
+  cursor: pointer;
+}
+.sidebar {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  background: var(--Black);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: transform 0.5s ease-in-out;
+}
+/* .sidebar:hover {
+  transform: translateX(100px);
+} */
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 2em;
+}
+.sidebar-nav * {
+  color: var(--Gray);
+  font-family: var(--font-family-heading);
+  font-size: 2em;
+  text-transform: uppercase;
+  padding-bottom: 1em;
+}
+.btn-close {
+  color: #fff;
+  font-size: 3em;
+  padding-inline: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (600px < width) {
+  .hamburger-icon {
+    display: none;
+  }
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+  }
+}
+.hero-heading {
+  max-width: 16ch;
+  margin: 3rem 1rem;
+  padding: 1em;
+  text-align: left;
+  color: var(--White);
+  font-family: var(--font-family-heading);
+  font-size: clamp(3rem, 2rem + 2vw, 6rem);
+  text-transform: uppercase;
+  border: 1px solid var(--White);
+}
+/* Intro section */
+.intro-section,
+.intro-img-box,
+.intro-text {
+  display: flex;
+  flex-direction: column;
+}
+.intro-img-box {
+  flex: 0.5;
+  z-index: -1;
+}
+.intro-text {
+  flex: 0.5;
+  /* border: 1px solid blue; */
+  padding: 2em 1em;
+}
+.intro-section {
+  padding: 1em;
+}
+@media screen and (654px < width) {
+  .intro-section {
+    flex-direction: row;
+    padding-inline: 4em;
+    align-items: flex-end;
+    margin: 4em;
+  }
+  .intro-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 731 / 500;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .intro-text {
+    height: min-content;
+    padding: 2em 0 0 2em;
+    text-align: left;
+    background: #fff;
+    transform: translateX(-6em);
+  }
+  .intro-text * {
+    max-width: 400px;
+  }
+}
+/* Creations Section */
+.creation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cta-see-all {
+  padding: 0.5em 1.25em;
+  text-transform: uppercase;
+  font-size: larger;
+}
+.cta-top {
+  display: none;
+}
+
+.img-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  text-align: left;
+  padding: 2em 0;
+}
+/* .img-list {
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.img-list item {
+    flex-basis: 25%;
+} */
+@media screen and (654px < width) {
+  .img-list {
+    /* grid-template-columns: repeat(auto-fill, minmax(256px, 1fr)); */
+    grid-template-columns: repeat(
+      4,
+      auto
+    ); /* https://stackoverflow.com/questions/70770416/how-do-make-columns-in-a-grid-space-evenly-like-with-flexbox */
+    justify-content: space-between;
+  }
+  .cta-top {
+    display: inline-block;
+  }
+  .cta-bottom {
+    display: none;
+  }
+}
+@media screen and (768px < width) {
+  .creations-section {
+    padding-inline: 4em;
+    grid-template-columns: repeat(auto-fill, 256px);
+    place-content: center;
+  }
+}
+
+.item {
+  position: relative;
+}
+.item span {
+  color: var(--White);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-family: var(--font-family-heading);
+  font-weight: bold;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  padding: 1em;
+}
+/* Footer */
+.footer {
+  background-color: var(--Black);
+  color: var(--White);
+  padding-block: 2em;
+}
+.footer,
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-left *,
+.footer-right * {
+  padding-block: 0.25em;
+}
+.footer-left {
+  margin-bottom: 2em;
+}
+.social * {
+  padding: 0 0.5em;
+}
+.footer-item {
+  display: block;
+  padding: 1em;
+  text-align: center;
+}
+.footer-item a {
+  color: #fff;
+}
+@media screen and (768px < width) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-left {
+    align-items: flex-start;
+    margin: 0;
+  }
+  .footer-right {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  .footer-item {
+    display: inline-block;
+    padding: 0;
+    padding-right: 1em;
+  }
+}
